@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('beasiswas', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->string('alamat');
             $table->string('email');
             $table->foreignId('user_id')->constrained('users');
             $table->string('no_hp');

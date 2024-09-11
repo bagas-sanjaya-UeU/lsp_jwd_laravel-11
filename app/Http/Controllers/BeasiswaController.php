@@ -22,6 +22,7 @@ class BeasiswaController extends Controller
 
         $request->validate([
             'nama' => 'required',
+            'alamat' => 'required',
             'email' => 'required|max:255',
             'no_hp' => 'required',
             'semester' => 'required',
@@ -37,6 +38,7 @@ class BeasiswaController extends Controller
 
         Beasiswa::create([
             'nama' => $request->nama,
+            'alamat' => $request->alamat,
             'user_id' => Auth::user()->id,
             'email' => $request->email,
             'no_hp' => $request->no_hp,
@@ -46,7 +48,7 @@ class BeasiswaController extends Controller
             'file' => $nama_file,
         ]);
 
-        return redirect()->route('show.beasiswa');
+        return redirect()->route('show.beasiswa')->with('success', 'Data berhasil ditambahkan');
     }
 
     public function show()

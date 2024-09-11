@@ -13,6 +13,7 @@ class Beasiswa extends Model
     protected $table = 'beasiswas';
     protected $fillable = [
         'nama',
+        'alamat',
         'user_id',
         'email',
         'no_hp',
